@@ -14,7 +14,7 @@ const mpcTracker = document.querySelector('#mpc'); // money per click
 const upgradesTracker = document.querySelector('#upgrades');
 const upgradeList = document.querySelector('#upgradelist');
 const msgbox = document.querySelector('#msgbox');
-const audioAchievement = document.querySelector('#splat');
+const audioAchievement = document.querySelector('#slime');
 const audioClick = document.querySelector('#splat');
 
 /* Följande variabler använder vi för att hålla reda på hur mycket pengar som
@@ -54,7 +54,12 @@ let achievements = [
     },
     {
         description: 'Gloop-god!',
-        requiredClicks: 10000,
+        requiredClicks: 1000,
+        acquired: false,
+    },
+    {
+        description: 'Romulus',
+        requiredUpgrades: 410,
         acquired: false,
     },
 ];
@@ -98,10 +103,15 @@ function step(timestamp) {
     mpcTracker.textContent = moneyPerClick;
     upgradesTracker.textContent = acquiredUpgrades;
 
+    money += (moneyPerSecond/60);
+
+    //Gammal penga-kod
+    /*
     if (timestamp >= last + 1000) {
         money += moneyPerSecond;
         last = timestamp;
     }
+    */
 
     if (moneyPerSecond > 0 && !active) {
         mpsTracker.classList.add('active');
@@ -176,7 +186,7 @@ upgrades = [
         clicks: 2,
     },
     {
-        name: 'Kleggrik',
+        name: 'Kleggrikt Klegg',
         cost: 100,
         amount: 10,
     },

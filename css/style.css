@@ -28,7 +28,7 @@
 }
 
 body {
-    background-color: white;
+    background-color: var(--color-light);
     color: var(--color-dark);
     font-family: shlop;
     font-size: var(--step-1);
@@ -146,7 +146,7 @@ audio {
     width: var(--space-4xl-5xl);
     height: var(--space-4xl-5xl);
     font-size: var(--step-2);
-    background: url('../img/klegg3.png');
+    background: url('../img/klegg3transparent.png');
     background-size: cover;
     background-position: center;
     border: 2px solid transparent;
@@ -202,9 +202,11 @@ audio {
  * skapa en mer lättläst struktur
  */
 .card {
+    /*color: var(--color-light);*/
     display: flex;
     justify-content: space-between;
     cursor: pointer;
+    /*background-image: url("../img/fireflyklegg.jpg");*/
     border: 1px solid var(--color-dark-transparent);
     margin: var(--space-xs-s) 0;
     padding: var(--space-s-m) var(--space-xs-s);
