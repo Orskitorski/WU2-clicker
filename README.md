@@ -1,5 +1,13 @@
 # Clicker, webbprojekt
 
+{
+    title: 'Klegg-Klicker',
+    tagline: 'Hur kleggig kan man vara? Ta reda på det med hjälp av "Klegg-Klicker"!',
+    url: 'https://orskitorski.github.io/WU2-clicker/',
+    git: 'https://github.com/Orskitorski/WU2-clicker',
+    author: 'Oscar Tafvelin'
+},
+
 Du har fått i uppdrag att designa och skapa ett clicker-spel från Kakmonstret AB.
 Till ditt förfogande har du lite kod som en tidigare anställd lämnat efter sig, använd den.
 
