@@ -16,6 +16,8 @@ const upgradeList = document.querySelector('#upgradelist');
 const msgbox = document.querySelector('#msgbox');
 const audioAchievement = document.querySelector('#slime');
 const audioClick = document.querySelector('#splat');
+const audioUpgrade = document.querySelector('#splat');
+
 
 /* Följande variabler använder vi för att hålla reda på hur mycket pengar som
  * spelaren, har och tjänar.
@@ -38,6 +40,11 @@ let active = false; // exempel för att visa att du kan lägga till klass för a
 
 let achievements = [
     {
+        description: 'Kleggare!',
+        requiredClicks: 1,
+        acquired: false,
+    },
+    {
         description: 'Klegget har startat, grattis! ',
         requiredUpgrades: 1,
         acquired: false,
@@ -53,13 +60,18 @@ let achievements = [
         acquired: false,
     },
     {
+        description: 'Glooper!',
+        requiredClicks: 100,
+        acquired: false,
+    },
+    {
         description: 'Gloop-god!',
         requiredClicks: 1000,
         acquired: false,
     },
     {
         description: 'Romulus',
-        requiredUpgrades: 410,
+        requiredClicks: 410,
         acquired: false,
     },
 ];
@@ -78,7 +90,7 @@ clickerButton.addEventListener(
     'click',
     () => {
         // spela ljudet
-        audioClick.play()
+        audioClick.cloneNode().play()
         // vid click öka score med moneyPerClick
         money += moneyPerClick;
         // håll koll på hur många gånger spelaren klickat
@@ -244,7 +256,7 @@ function createCard(upgrade) {
             moneyPerClick += upgrade.clicks ? upgrade.clicks : 0;
             message('Grattis du har köpt en uppgradering!', 'success');
             // spela ljudet
-            audioClick.play()
+            audioClick.cloneNode().play()
         } else {
             message('Du har inte råd.', 'warning');
         }
